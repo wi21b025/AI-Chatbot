@@ -42,7 +42,7 @@ GUI Interface + Feedback Collection
 ├── app.py                 # GUI entry point
 ├── query_data.py          # RAG + GPT answer generator
 ├── create_database.py     # PDF embedding & ChromaDB setup
-├── clean_abriviations.py  # German abbreviation normalizer
+├── clean_abbreviations.py  # German abbreviation normalizer
 ├── settings.py            # Configuration and path resolver
 ├── requirements.txt
 ├── config/
