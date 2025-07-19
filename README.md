@@ -8,13 +8,14 @@ It uses semantic search and GPT-based generation to deliver fast, filtered, and 
 
 ## 🚀 Features
 
-- 🔍 Retrieval-Augmented Generation (RAG) using ChromaDB + GPT
-- 💬 GPT-4o-powered answer generation via LangChain
-- 🧠 Context parsing with template-driven prompts
-- 📄 Processes official documents (PDF) and Moodle links
-- ✅ Feedback collection with thumbs-up/down and reasons
-- 🧑‍💻 User session logging to CSV for analysis
-- 🖥️ GUI built using `tkinter` for local interaction
+- 📄 Processes official documents (PDF) and links (JSON)  
+- 🔢 Embedding using OpenAI's `text-embedding-ada-002` via LangChain  
+- 🔍 Retrieval-Augmented Generation (RAG) using ChromaDB + GPT  
+- 🧠 Context parsing with template-driven prompts  
+- 💬 GPT-4o-powered answer generation via LangChain  
+- 🖥️ GUI built using `tkinter` for local interaction  
+- ✅ Feedback collection with thumbs-up/down and reasons  
+- 🧑‍💻 User session logging to CSV for analysis  
 
 ---
 
