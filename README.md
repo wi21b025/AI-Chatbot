@@ -1,7 +1,8 @@
 
 # 🤖 AI Chatbot for FHTW – v2.0
 
-A context-aware, OpenAI-powered chatbot designed to answer administrative and academic queries using university-specific documents and Moodle links. It uses semantic search and GPT-based generation to deliver fast, filtered, and source-aware answers.
+A context-aware, OpenAI-powered chatbot designed to answer administrative queries using university-specific documents and links. 
+It uses semantic search and GPT-based generation to deliver fast, filtered, and source-aware answers. 
 
 ---
 
@@ -84,12 +85,13 @@ Key libraries used:
 
 To ensure the chatbot stays accurate and doesn't "make things up," several controls were implemented:
 
-- It only shows answers if at least one source in the top 10 search results scores above 0.50 relevance.
-- The GPT model is prompted to respond strictly based on the retrieved context and nothing else.
-- With `temperature=0`, the model always returns the most likely, non-random output.
-
-If there’s not enough context to answer the question properly, the chatbot will clearly say:
+- Only the top 10 most relevant results will be stored into context. However to be accepted, the similarity score must be at least 0.50 or above.
+- The RAG pipeline retrieves the user query, context, and rules and GPT model (LLM) responds strictly based on the retrieved context.
+- If there’s no relevant context to answer the question properly, the chatbot will clearly say:
 > *"Sorry, I can't find any information on this topic."*
+- With `temperature=0`, the model should always or most likely return non-random output.
+
+
 
 ---
 
