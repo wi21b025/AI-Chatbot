@@ -86,11 +86,12 @@ Key libraries used:
 
 To ensure the chatbot stays accurate and doesn't "make things up," several controls were implemented:
 
-- Only the top 10 most relevant results will be stored into context. However to be accepted, the similarity score must be at least 0.50 or above.
-- The RAG pipeline retrieves the user query, context, and rules and GPT model (LLM) responds strictly based on the retrieved context.
+- Only the top 10 most relevant results will kept. However to be accepted, the similarity score must be at least 0.50 or above.
+- The RAG pipeline builds a context based on the user query, retrieved results, and rules.
+- The GPT model (LLM) then responds strictly using this context.
 - If there’s no relevant context to answer the question properly, the chatbot will clearly say:
 > *"Sorry, I can't find any information on this topic."*
-- With `temperature=0`, the model should always or most likely return non-random output.
+- Setting temperature=0 should result in deterministic (non-random) output.
 
 
 
