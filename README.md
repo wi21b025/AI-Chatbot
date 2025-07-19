@@ -46,7 +46,7 @@ GUI Interface + Feedback Collection
 ├── settings.py            # Configuration and path resolver
 ├── requirements.txt
 ├── config/
-│   └── db/               
+│   └── db/                 # Embedded data saved in ChromaDB
 │   └── .env                # OpenAI API key configuration
 ├── data/
 │   ├── books/              # Source PDFs
