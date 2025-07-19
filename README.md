@@ -1,3 +1,4 @@
+
 # 🤖 AI Chatbot for FHTW – v2.0
 
 A context-aware, OpenAI-powered chatbot designed to answer administrative and academic queries using university-specific documents and Moodle links. It uses semantic search and GPT-based generation to deliver fast, filtered, and source-aware answers.
@@ -68,7 +69,7 @@ python create_database.py
 This will:
 - Process all PDF files in `data/books`
 - Generate embeddings
-- Store them in `config/db/chroma25`
+- Store them in `config/db`
 
 ### 2. Launch the Chatbot GUI
 
@@ -90,18 +91,31 @@ The application opens a GUI where users can type questions and receive AI-genera
 
 ---
 
-## 🛡️ Hallucination Prevention
+## 🧰 Environment
 
-This chatbot applies multiple controls to minimize hallucinations:
+This project was developed using:
 
-- `temperature=0`: ensures deterministic, non-random answers
-- Carefully engineered prompts to restrict the model to retrieved context only
-- If the answer cannot be supported by the context, the bot responds:
-  > *"No information available regarding this topic in the source documents."*
+- **Conda**: 22.9
+- **Python**: 3.10
 
-This enforces factual accuracy and guards against model guesswork.
+Using a Conda environment is recommended for managing dependencies consistently.
 
 ---
+
+## 🛡️ Hallucination Prevention
+
+To ensure the chatbot stays accurate and doesn't "make things up," several controls were implemented:
+
+- It only shows answers if at least one source in the top 10 search results scores above 0.50 relevance.
+- after wards thorug the promt the answares would be filtered if they are relevant ot the question
+- The GPT model is prompted to respond strictly based on the retrieved context and nothing else.
+- With `temperature=0`, the model always returns the most likely, non-random output.
+
+If there’s not enough context to answer the question properly, the chatbot will clearly say:
+> *"Sorry, I can't find any information on this topic."*
+
+---
+
 
 ## 🧾 Feedback Logging
 
@@ -119,27 +133,31 @@ Files are stored in the `user-testing/` directory and auto-generated per session
 
 ```bash
 .
-├── app.py                  # GUI entry point
+├── app.py                 # GUI entry point
 ├── query_data.py          # RAG + GPT answer generator
 ├── create_database.py     # PDF embedding & ChromaDB setup
 ├── clean_abriviations.py  # German abbreviation normalizer
 ├── settings.py            # Configuration and path resolver
 ├── requirements.txt
 ├── config/
+│   └── db/               
 │   └── .env                # OpenAI API key configuration
 ├── data/
 │   ├── books/              # Source PDFs
-│   └── links/              # Moodle links in JSON format
-└── user-testing/          # Saved user logs (CSV)
+│   └── links/              # Source Links
+└── user-testing/           # Saved user logs (CSV)
 ```
 
 ---
 
-## 🔐 Notes
+## 🎓 Lessons Learned
 
-- Place all source PDFs under `data/books/`
-- Moodle links must be stored as a JSON file at `data/links/links.json`
-- Output logs from chatbot interactions are saved automatically
+
+**Garbage in, garbage out**       ~ Preprocessing and cleaning was crutial in chatbot accuracy 
+
+**Hallucinations happens**        ~ Key is how to control and filter it confidently
+
+**User feedback is everything**   ~ Real user interaction surfaces issues and gaps that internal testing simply can't replicate
 
 ---
 
