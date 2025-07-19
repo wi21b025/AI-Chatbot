@@ -39,11 +39,11 @@ GUI Interface + Feedback Collection
 ## 📁 Project Structure
 ```bash
 .
-├── app.py                 # GUI entry point
-├── query_data.py          # RAG + GPT answer generator
-├── create_database.py     # PDF embedding & ChromaDB setup
+├── app.py                  # GUI entry point
+├── query_data.py           # RAG + GPT answer generator
+├── create_database.py      # PDF embedding & ChromaDB setup
 ├── clean_abbreviations.py  # German abbreviation normalizer
-├── settings.py            # Configuration and path resolver
+├── settings.py             # Configuration and path resolver
 ├── requirements.txt
 ├── config/
 │   └── db/                 # Embedded data saved in ChromaDB
@@ -91,7 +91,7 @@ To ensure the chatbot stays accurate and doesn't "make things up," several contr
 - The GPT model (LLM) then responds strictly using this context.
 - If there’s no relevant context to answer the question properly, the chatbot will clearly say:
 > *"Sorry, I can't find any information on this topic."*
-- Setting temperature=0 should result in deterministic (non-random) output.
+- Setting `temperature=0` should result in deterministic (non-random) output.
 
 
 
