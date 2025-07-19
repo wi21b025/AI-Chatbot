@@ -102,6 +102,7 @@ User interactions are saved in CSV format, including:
 ```csv
 ID, Question, Answer, Thumbsup, Thumbsdown, Reason, ResponseTime
 ```
+`ResponseTime` is recorded automatically.
 
 Files are stored in the `user-testing/` directory and auto-generated per session.
 
