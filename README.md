@@ -114,7 +114,7 @@ Files are stored in the `user-testing/` directory and auto-generated per session
 
 **Garbage in, garbage out**       ~ Preprocessing and cleaning was crutial in chatbot accuracy 
 
-**Hallucinations happens**        ~ Key is how to control and filter it confidently
+**Hallucinations happen**        ~ Key is how to control and filter it confidently
 
 **User feedback is everything**   ~ Real user interaction surfaces issues and gaps that internal testing simply can't replicate
 
