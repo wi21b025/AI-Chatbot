@@ -50,7 +50,7 @@ GUI Interface + Feedback Collection
 │   └── .env                # OpenAI API key configuration
 ├── data/
 │   ├── books/              # Source PDFs
-│   └── links/              # Source Links
+│   └── links/              # Source Links (JSON)
 └── user-testing/           # Saved user logs (CSV)
 ```
 ---
